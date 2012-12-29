@@ -1,0 +1,1 @@
+add_lunch_combo tripndroid_endeavoru-userdebug
