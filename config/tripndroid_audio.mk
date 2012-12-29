@@ -9,14 +9,16 @@ UI_PATH := vendor/tripndroid/prebuilt/common/media/audio/ui
 
 # Alarms
 PRODUCT_COPY_FILES += \
-	$(ALARM_PATH)/CyanAlarm.ogg:system/media/audio/alarms/CyanAlarm.ogg
+	$(ALARM_PATH)/CyanAlarm.ogg:system/media/audio/alarms/CyanAlarm.ogg \
+	$(ALARM_PATH)/beeps.ogg:system/media/audio/alarms/beeps.ogg \
+	$(ALARM_PATH)/snooze.ogg:system/media/audio/alarms/snooze.ogg
 
 # Notifications
 PRODUCT_COPY_FILES += \
 	$(NOTIFICATION_PATH)/CyanMail.ogg:system/media/audio/notifications/CyanMail.ogg \
 	$(NOTIFICATION_PATH)/CyanMessage.ogg:system/media/audio/notifications/CyanMessage.ogg \
 	$(NOTIFICATION_PATH)/CyanPing.ogg:system/media/audio/notifications/CyanPing.ogg \
-	$(NOTIFICATION_PATH)/Naughty.ogg:system/media/audio/notifications/Naughty.ogg \
+	$(NOTIFICATION_PATH)/MessageAlert.ogg:system/media/audio/notifications/MessageAlert.ogg \
 	$(NOTIFICATION_PATH)/Rang.ogg:system/media/audio/notifications/Rang.ogg \
 	$(NOTIFICATION_PATH)/Stone.ogg:system/media/audio/notifications/Stone.ogg
 
