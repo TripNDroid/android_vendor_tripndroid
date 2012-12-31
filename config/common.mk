@@ -87,7 +87,8 @@ PRODUCT_PACKAGES += \
     VideoEditor \
     VoiceDialer \
     SoundRecorder \
-    Basic
+    Basic \
+    LockClock
 
 # Custom packages
 PRODUCT_PACKAGES += \
