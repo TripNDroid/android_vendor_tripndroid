@@ -15,18 +15,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.dateformat=MM-dd-yyyy \
     ro.com.android.dataroaming=false
 
-# Backup Tool
-PRODUCT_COPY_FILES += \
-    vendor/tripndroid/prebuilt/common/bin/blacklist:system/addon.d/blacklist
-
 # init.d support
 PRODUCT_COPY_FILES += \
     vendor/tripndroid/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/tripndroid/prebuilt/common/bin/sysinit:system/bin/sysinit
-
-# userinit support
-PRODUCT_COPY_FILES += \
-    vendor/tripndroid/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 
 # Compcache/Zram support
 PRODUCT_COPY_FILES += \
@@ -44,16 +36,6 @@ PRODUCT_COPY_FILES += \
 ifeq ($(TARGET_ARCH),arm)
 PRODUCT_COPY_FILES +=  \
     vendor/tripndroid/proprietary/lib/armeabi/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so
-endif
-
-ifeq ($(TARGET_ARCH),mips)
-PRODUCT_COPY_FILES +=  \
-    vendor/tripndroid/proprietary/lib/mips/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so
-endif
-
-ifeq ($(TARGET_ARCH),x86)
-PRODUCT_COPY_FILES +=  \
-    vendor/tripndroid/proprietary/lib/x86/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so
 endif
 
 # Bring in camera effects
@@ -81,7 +63,6 @@ PRODUCT_PACKAGES += \
     Camera \
     Development \
     LatinIME \
-    SpareParts \
     Superuser \
     su
 
@@ -109,8 +90,6 @@ PRODUCT_PACKAGES += \
     bash \
     vim \
     nano \
-    htop \
-    powertop \
     lsof
 
 # Openssh
