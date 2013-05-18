@@ -72,7 +72,8 @@ PRODUCT_PACKAGES += \
     VoiceDialer \
     SoundRecorder \
     Basic \
-    LockClock
+    LockClock \
+    CellBroadcastReceiver
 
 # Custom packages
 PRODUCT_PACKAGES += \
