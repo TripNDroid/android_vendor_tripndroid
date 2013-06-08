@@ -30,13 +30,8 @@ PRODUCT_COPY_FILES += \
     vendor/tripndroid/prebuilt/common/bin/modelid_cfg.sh:system/bin/modelid_cfg.sh
 
 PRODUCT_COPY_FILES += \
-    vendor/tripndroid/proprietary/Term.apk:system/app/Term.apk
-
-# Copy JNI libarary of Term
-ifeq ($(TARGET_ARCH),arm)
-PRODUCT_COPY_FILES +=  \
-    vendor/tripndroid/proprietary/lib/armeabi/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so
-endif
+    vendor/tripndroid/proprietary/Term.apk:system/app/Term.apk \
+    vendor/tripndroid/proprietary/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so
 
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
