@@ -59,7 +59,8 @@ PRODUCT_PACKAGES += \
     Development \
     LatinIME \
     Superuser \
-    su
+    su \
+    ROMControl
 
 # Optional packages
 PRODUCT_PACKAGES += \
