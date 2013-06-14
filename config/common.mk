@@ -1,7 +1,6 @@
 PRODUCT_BRAND ?= tripndroid
 
 SUPERUSER_EMBEDDED := true
-SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -13,7 +12,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.wifi-watchlist=GoogleGuest \
     ro.setupwizard.enterprise_mode=1 \
     ro.com.android.dateformat=MM-dd-yyyy \
-    ro.com.android.dataroaming=false
+    ro.com.android.dataroaming=false \
+    persist.sys.root_access=3
 
 # init.d support
 PRODUCT_COPY_FILES += \
@@ -60,7 +60,7 @@ PRODUCT_PACKAGES += \
     LatinIME \
     Superuser \
     su \
-    ROMControl
+    TDSettings
 
 # Optional packages
 PRODUCT_PACKAGES += \
@@ -74,8 +74,6 @@ PRODUCT_PACKAGES += \
 # Custom packages
 PRODUCT_PACKAGES += \
     Trebuchet \
-    DSPManager \
-    libcyanogen-dsp \
     audio_effects.conf
 
 # Extra tools
