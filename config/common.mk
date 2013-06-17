@@ -69,7 +69,8 @@ PRODUCT_PACKAGES += \
     SoundRecorder \
     Basic \
     LockClock \
-    CellBroadcastReceiver
+    CellBroadcastReceiver \
+    Notepad
 
 # Custom packages
 PRODUCT_PACKAGES += \
