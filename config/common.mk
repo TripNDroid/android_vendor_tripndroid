@@ -16,6 +16,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.dataroaming=false \
     persist.sys.root_access=3
 
+# Bootanimation
+PRODUCT_COPY_FILES += \
+    vendor/tripndroid/prebuilt/common/media/bootanimation.zip:system/media/bootanimation.zip
+
 # init.d support
 PRODUCT_COPY_FILES += \
     vendor/tripndroid/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
