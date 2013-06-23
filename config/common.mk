@@ -1,6 +1,7 @@
 PRODUCT_BRAND ?= tripndroid
 
 SUPERUSER_EMBEDDED := true
+SUPERUSER_PACKAGE := com.tripndroid.superuser
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
