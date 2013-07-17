@@ -84,8 +84,11 @@ PRODUCT_PACKAGES += \
 
 # Extra tools
 PRODUCT_PACKAGES += \
+    static_busybox \
     openvpn \
+    make_ext4fs \
     e2fsck \
+    setup_fs \
     mke2fs \
     tune2fs \
     bash \
