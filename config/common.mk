@@ -20,10 +20,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     vendor/tripndroid/prebuilt/common/media/bootanimation.zip:system/media/bootanimation.zip
 
-# init.d support
+# init.d
 PRODUCT_COPY_FILES += \
     vendor/tripndroid/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/tripndroid/prebuilt/common/bin/sysinit:system/bin/sysinit
+    vendor/tripndroid/prebuilt/common/bin/sysinit:system/bin/sysinit \
+    vendor/tripndroid/prebuilt/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
 
 # Compcache/Zram support
 PRODUCT_COPY_FILES += \
@@ -94,7 +95,12 @@ PRODUCT_PACKAGES += \
     bash \
     vim \
     nano \
-    lsof
+    lsof \
+    mount.exfat \
+    fsck.exfat \
+    mkfs.exfat \
+    ntfsfix \
+    ntfs-3g
 
 # Openssh
 PRODUCT_PACKAGES += \
