@@ -56,6 +56,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/tripndroid/prebuilt/common/etc/mkshrc:system/etc/mkshrc
 
+# Superuser
+PRODUCT_COPY_FILES += \
+    vendor/tripndroid/prebuilt/init.superuser.rc:root/init.superuser.rc
+
 # T-Mobile theme engine
 include vendor/tripndroid/config/themes_common.mk
 
