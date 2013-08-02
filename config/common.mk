@@ -1,7 +1,8 @@
 PRODUCT_BRAND ?= tripndroid
 
 SUPERUSER_EMBEDDED := true
-SUPERUSER_PACKAGE := com.android.settings.tripndroid.superuser
+SUPERUSER_PACKAGE_PREFIX := com.android.settings.tripndroid.superuser
+
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -14,7 +15,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.enterprise_mode=1 \
     ro.com.android.dateformat=MM-dd-yyyy \
     ro.com.android.dataroaming=false \
-    persist.sys.root_access=2
+    persist.sys.root_access=3
 
 # Bootanimation
 ifneq ($(TARGET_BOOTANIMATION_NAME),)
@@ -125,15 +126,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGE_OVERLAYS += vendor/tripndroid/overlay/dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/tripndroid/overlay/common
 
-PRODUCT_VERSION_MAJOR = 1
-PRODUCT_VERSION_MINOR = 0
-PRODUCT_VERSION_MAINTENANCE = 0-B0
+PRODUCT_VERSION_MAJOR := 1
+PRODUCT_VERSION_MINOR := 0
+PRODUCT_VERSION_MAINTENANCE := 0-B0
 
     # Set to OFFICIAL
     CM_BUILDTYPE := OFFICIAL
-    CM_EXTRAVERSION :=
 
-    CM_VERSION := $(PRODUCT_VERSION_MAJOR)-$(shell date -u +%Y%m%d)-$(CM_BUILDTYPE)-$(CM_BUILD)$(CM_EXTRAVERSION)
+    CM_VERSION := $(PRODUCT_VERSION_MAJOR)-$(PRODUCT_VERSION_MINOR)-$(PRODUCT_VERSION_MAINTENANCE)-$(shell date -u +%Y%m%d)-$(CM_BUILDTYPE)
 
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -142,7 +142,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 ADDITIONAL_DEFAULT_PROPERTIES += \
   ro.adb.secure=0 \
-  ro.secure=0 \
-  service.adb.root=1
+  ro.secure=0
 
 -include $(WORKSPACE)/hudson/image-auto-bits.mk
