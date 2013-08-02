@@ -86,7 +86,8 @@ PRODUCT_PACKAGES += \
 # Custom packages
 PRODUCT_PACKAGES += \
     Trebuchet \
-    audio_effects.conf
+    audio_effects.conf \
+    libcyanogen-dsp
 
 # Extra tools
 PRODUCT_PACKAGES += \
