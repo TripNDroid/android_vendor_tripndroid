@@ -25,8 +25,10 @@ PRODUCT_COPY_FILES += \
 # Ringtones
 PRODUCT_COPY_FILES += \
 	$(RINGTONE_PATH)/Boxbeat.ogg:system/media/audio/ringtones/Boxbeat.ogg \
+	$(RINGTONE_PATH)/Breeze.ogg:system/media/audio/ringtones/Breeze.ogg \
 	$(RINGTONE_PATH)/CyanTone.ogg:system/media/audio/ringtones/CyanTone.ogg \
-	$(RINGTONE_PATH)/Gigolo.ogg:system/media/audio/ringtones/Gigolo.ogg \
+	$(RINGTONE_PATH)/GardenWaltz.ogg:system/media/audio/ringtones/GardenWaltz.ogg \
 	$(RINGTONE_PATH)/Silmarillia.ogg:system/media/audio/ringtones/Silmarillia.ogg \
-	$(RINGTONE_PATH)/QuietlyBrilliant.ogg:system/media/audio/ringtones/QuietlyBrilliant.ogg
+	$(RINGTONE_PATH)/QuietlyBrilliant.ogg:system/media/audio/ringtones/QuietlyBrilliant.ogg \
+	$(RINGTONE_PATH)/Xperia.ogg:system/media/audio/ringtones/Xperia.ogg
 

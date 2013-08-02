@@ -1,7 +1,7 @@
 PRODUCT_BRAND ?= tripndroid
 
 SUPERUSER_EMBEDDED := true
-SUPERUSER_PACKAGE := com.tripndroid.superuser
+SUPERUSER_PACKAGE := com.android.settings.tripndroid.superuser
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -14,11 +14,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.enterprise_mode=1 \
     ro.com.android.dateformat=MM-dd-yyyy \
     ro.com.android.dataroaming=false \
-    persist.sys.root_access=3
+    persist.sys.root_access=2
 
 # Bootanimation
+ifneq ($(TARGET_BOOTANIMATION_NAME),)
 PRODUCT_COPY_FILES += \
-    vendor/tripndroid/prebuilt/common/media/bootanimation.zip:system/media/bootanimation.zip
+    vendor/tripndroid/prebuilt/common/media/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
+endif
 
 # init.d
 PRODUCT_COPY_FILES += \
@@ -69,8 +71,7 @@ PRODUCT_PACKAGES += \
     Development \
     LatinIME \
     Superuser \
-    su \
-    TDSettings
+    su
 
 # Optional packages
 PRODUCT_PACKAGES += \
@@ -138,5 +139,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.tripndroid.version=$(CM_VERSION) \
   ro.modversion=$(CM_VERSION)
 
+ADDITIONAL_DEFAULT_PROPERTIES += \
+  ro.adb.secure=0 \
+  ro.secure=0 \
+  service.adb.root=1
 
 -include $(WORKSPACE)/hudson/image-auto-bits.mk
