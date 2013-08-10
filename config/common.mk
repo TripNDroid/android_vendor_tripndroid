@@ -89,6 +89,10 @@ PRODUCT_PACKAGES += \
     audio_effects.conf \
     libcyanogen-dsp
 
+PRODUCT_PACKAGES += \
+    org.cyanogenmod.hardware \
+    org.cyanogenmod.hardware.xml
+
 # Extra tools
 PRODUCT_PACKAGES += \
     static_busybox \
