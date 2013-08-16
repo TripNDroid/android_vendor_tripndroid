@@ -27,6 +27,7 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/tripndroid/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/tripndroid/prebuilt/common/bin/sysinit:system/bin/sysinit \
+    vendor/tripndroid/prebuilt/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
 
 # Compcache/Zram support
 PRODUCT_COPY_FILES += \
