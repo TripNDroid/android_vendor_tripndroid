@@ -68,6 +68,7 @@ include vendor/tripndroid/config/themes_common.mk
 
 # Required packages
 PRODUCT_PACKAGES += \
+    TDSettings \
     Focal \
     Development \
     LatinIME \
