@@ -83,6 +83,7 @@ PRODUCT_PACKAGES += \
     Basic \
     LockClock \
     CellBroadcastReceiver \
+    PartnerBookmarksProvider \
     Notepad
 
 # Custom packages
