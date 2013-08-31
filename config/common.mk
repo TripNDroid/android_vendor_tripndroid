@@ -15,7 +15,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.enterprise_mode=1 \
     ro.com.android.dateformat=MM-dd-yyyy \
     ro.com.android.dataroaming=false \
-    persist.sys.root_access=3
+    persist.sys.root_access=3 \
+    ro.build.selinux=1
 
 # Bootanimation
 ifneq ($(TARGET_BOOTANIMATION_NAME),)
@@ -34,10 +35,7 @@ PRODUCT_COPY_FILES += \
     vendor/tripndroid/prebuilt/common/bin/compcache:system/bin/compcache \
     vendor/tripndroid/prebuilt/common/bin/handle_compcache:system/bin/handle_compcache
 
-# Nam configuration script
-PRODUCT_COPY_FILES += \
-    vendor/tripndroid/prebuilt/common/bin/modelid_cfg.sh:system/bin/modelid_cfg.sh
-
+# Terminal
 PRODUCT_COPY_FILES += \
     vendor/tripndroid/proprietary/Term.apk:system/app/Term.apk \
     vendor/tripndroid/proprietary/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so
@@ -51,6 +49,10 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
+# block stock OTAs
+PRODUCT_COPY_FILES += \
+    vendor/tripndroid/prebuilt/common/bin/otablock:system/bin/otablock
+
 # CM stuff
 PRODUCT_COPY_FILES += \
     vendor/tripndroid/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
@@ -58,10 +60,6 @@ PRODUCT_COPY_FILES += \
 # Don't export PS1 in /system/etc/mkshrc.
 PRODUCT_COPY_FILES += \
     vendor/tripndroid/prebuilt/common/etc/mkshrc:system/etc/mkshrc
-
-# Superuser
-PRODUCT_COPY_FILES += \
-    vendor/tripndroid/prebuilt/init.superuser.rc:root/init.superuser.rc
 
 # T-Mobile theme engine
 include vendor/tripndroid/config/themes_common.mk
@@ -77,7 +75,6 @@ PRODUCT_PACKAGES += \
 
 # Optional packages
 PRODUCT_PACKAGES += \
-    VideoEditor \
     VoiceDialer \
     SoundRecorder \
     Basic \
@@ -113,7 +110,8 @@ PRODUCT_PACKAGES += \
     fsck.exfat \
     mkfs.exfat \
     ntfsfix \
-    ntfs-3g
+    ntfs-3g \
+    rsync
 
 # Openssh
 PRODUCT_PACKAGES += \
@@ -125,10 +123,6 @@ PRODUCT_PACKAGES += \
     ssh-keygen \
     start-ssh
 
-# rsync
-PRODUCT_PACKAGES += \
-    rsync
-
 PRODUCT_PACKAGE_OVERLAYS += vendor/tripndroid/overlay/dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/tripndroid/overlay/common
 
@@ -136,10 +130,9 @@ PRODUCT_VERSION_MAJOR := 1
 PRODUCT_VERSION_MINOR := 0
 PRODUCT_VERSION_MAINTENANCE := 0-B0
 
-    # Set to OFFICIAL
-    CM_BUILDTYPE := OFFICIAL
-
-    CM_VERSION := $(PRODUCT_VERSION_MAJOR)-$(PRODUCT_VERSION_MINOR)-$(PRODUCT_VERSION_MAINTENANCE)-$(shell date -u +%Y%m%d)-$(CM_BUILDTYPE)
+# Set to OFFICIAL
+ CM_BUILDTYPE := OFFICIAL
+ CM_VERSION := $(PRODUCT_VERSION_MAJOR)-$(PRODUCT_VERSION_MINOR)-$(PRODUCT_VERSION_MAINTENANCE)-$(shell date -u +%Y%m%d)-$(CM_BUILDTYPE)
 
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -150,4 +143,5 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
   ro.adb.secure=0 \
   ro.secure=0
 
+-include vendor/cm/sepolicy/sepolicy.mk
 -include $(WORKSPACE)/hudson/image-auto-bits.mk
