@@ -68,7 +68,6 @@ include vendor/tripndroid/config/themes_common.mk
 PRODUCT_PACKAGES += \
     TDSettings \
     Focal \
-    Development \
     LatinIME \
     Superuser \
     su
