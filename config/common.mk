@@ -84,7 +84,7 @@ PRODUCT_PACKAGES += \
 
 # Custom packages
 PRODUCT_PACKAGES += \
-    Trebuchet \
+    Launcher3 \
     audio_effects.conf \
     libcyanogen-dsp
 
