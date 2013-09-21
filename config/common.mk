@@ -70,6 +70,7 @@ PRODUCT_PACKAGES += \
     Focal \
     LatinIME \
     Superuser \
+    BluetoothExt \
     su
 
 # Optional packages
