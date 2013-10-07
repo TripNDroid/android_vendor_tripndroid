@@ -16,7 +16,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.dateformat=MM-dd-yyyy \
     ro.com.android.dataroaming=false \
     persist.sys.root_access=3 \
-    ro.build.selinux=1
+    ro.build.selinux=1 \
+    sys.media.parser.ffmpeg=1
 
 # Bootanimation
 ifneq ($(TARGET_BOOTANIMATION_NAME),)
