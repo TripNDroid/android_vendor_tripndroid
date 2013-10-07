@@ -82,6 +82,13 @@ PRODUCT_PACKAGES += \
     PartnerBookmarksProvider \
     Notepad
 
+# TripNDroid ffmpeg integration
+PRODUCT_PACKAGES += \
+    libnamparser \
+    libFFmpegExtractor \
+    libstagefright_soft_ffmpegadec \
+    libstagefright_soft_ffmpegvdec
+
 # Custom packages
 PRODUCT_PACKAGES += \
     Launcher3 \
