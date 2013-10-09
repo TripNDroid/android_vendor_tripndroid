@@ -36,11 +36,6 @@ PRODUCT_COPY_FILES += \
     vendor/tripndroid/prebuilt/common/bin/compcache:system/bin/compcache \
     vendor/tripndroid/prebuilt/common/bin/handle_compcache:system/bin/handle_compcache
 
-# Terminal
-PRODUCT_COPY_FILES += \
-    vendor/tripndroid/proprietary/Term.apk:system/app/Term.apk \
-    vendor/tripndroid/proprietary/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so
-
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
     vendor/tripndroid/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
@@ -81,7 +76,8 @@ PRODUCT_PACKAGES += \
     LockClock \
     CellBroadcastReceiver \
     PartnerBookmarksProvider \
-    Notepad
+    Notepad \
+    AndroidTerm
 
 # TripNDroid ffmpeg integration
 PRODUCT_PACKAGES += \
