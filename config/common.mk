@@ -81,7 +81,6 @@ PRODUCT_PACKAGES += \
 
 # TripNDroid ffmpeg integration
 PRODUCT_PACKAGES += \
-    libnamparser \
     libFFmpegExtractor \
     libstagefright_soft_ffmpegadec \
     libstagefright_soft_ffmpegvdec
