@@ -17,7 +17,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.dataroaming=false \
     persist.sys.root_access=3 \
     ro.build.selinux=1 \
-    sys.media.parser.ffmpeg=1
+    sys.media.parser.ffmpeg=1 \
+    dalvik.vm.dexopt-flags=v=n,o=a,u=n,m=n
 
 # Bootanimation
 ifneq ($(TARGET_BOOTANIMATION_NAME),)
