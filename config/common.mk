@@ -71,7 +71,6 @@ PRODUCT_PACKAGES += \
     LockClock \
     CellBroadcastReceiver \
     PartnerBookmarksProvider \
-    hackerskeyboard \
     AndroidTerm
 
 # TripNDroid ffmpeg integration
@@ -82,7 +81,7 @@ PRODUCT_PACKAGES += \
 
 # Custom packages
 PRODUCT_PACKAGES += \
-    Launcher4 \
+    Launcher2 \
     audio_effects.conf \
     libcyanogen-dsp
 
