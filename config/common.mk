@@ -81,6 +81,7 @@ PRODUCT_PACKAGES += \
 
 # Custom packages
 PRODUCT_PACKAGES += \
+    libemoji \
     Launcher2 \
     audio_effects.conf \
     libcyanogen-dsp
