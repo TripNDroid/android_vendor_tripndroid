@@ -140,5 +140,4 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
   ro.adb.secure=0 \
   ro.secure=0
 
--include vendor/tripndroid/sepolicy/sepolicy.mk
 -include $(WORKSPACE)/hudson/image-auto-bits.mk
