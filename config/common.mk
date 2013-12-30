@@ -48,19 +48,19 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/tripndroid/prebuilt/common/bin/otablock:system/bin/otablock
 
+# su
+PRODUCT_COPY_FILES += \
+    vendor/tripndroid/prebuilt/common/root/init.superuser.rc:root/init.superuser.rc
+
 # CM stuff
 PRODUCT_COPY_FILES += \
     vendor/tripndroid/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
-
-# T-Mobile theme engine
-include vendor/tripndroid/config/themes_common.mk
 
 # Required packages
 PRODUCT_PACKAGES += \
     TDSettings \
     LatinIME \
     Superuser \
-    BluetoothExt \
     su
 
 # Optional packages
@@ -101,15 +101,13 @@ PRODUCT_PACKAGES += \
     mke2fs \
     tune2fs \
     bash \
-    vim \
     nano \
     lsof \
     mount.exfat \
     fsck.exfat \
     mkfs.exfat \
     ntfsfix \
-    ntfs-3g \
-    rsync
+    ntfs-3g
 
 # Openssh
 PRODUCT_PACKAGES += \

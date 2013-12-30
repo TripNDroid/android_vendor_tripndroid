@@ -7,10 +7,6 @@ $(call inherit-product, vendor/google/google-vendor.mk)
 # Bring in all video files
 $(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
 
-# Bring in framework audio files
-include frameworks/base/data/sounds/NewAudio.mk
-include frameworks/base/data/sounds/AudioPackageNewWave.mk
-
 # Include audio files
 include vendor/tripndroid/config/tripndroid_audio.mk
 
@@ -21,11 +17,3 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     PhaseBeam \
     PhotoTable
-
-#PRODUCT_PACKAGES += \
-#    VideoEditor \
-#    libvideoeditor_jni \
-#    libvideoeditor_core \
-#    libvideoeditor_osal \
-#    libvideoeditor_videofilters \
-#    libvideoeditorplayer
