@@ -119,6 +119,11 @@ PRODUCT_PACKAGES += \
     ssh-keygen \
     start-ssh
 
+# Video Calling
+PRODUCT_PACKAGES += \
+    libvt_jni \
+    libimscamera_jni
+
 PRODUCT_PACKAGE_OVERLAYS += vendor/tripndroid/overlay/dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/tripndroid/overlay/common
 
