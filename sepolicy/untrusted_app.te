@@ -1,0 +1,1 @@
+#allow untrusted_app td_status_bar_service:service_manager find;

@@ -1,0 +1,4 @@
+allow audioserver audioserver_tmpfs:file { read write };
+allow audioserver dts_data_file:dir { search };
+allow audioserver sysinit:binder { call };
+allow audioserver system_data_file:fifo_file { write };

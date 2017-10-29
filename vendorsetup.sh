@@ -1,1 +1,2 @@
-add_lunch_combo tripndroid_m7-userdebug
+add_lunch_combo tripndroid_hima-userdebug
+add_lunch_combo tripndroid_cheeseburger-userdebug
