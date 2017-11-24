@@ -18,9 +18,9 @@
 -include vendor/tripndroid-official/setup.mk
 
 # Set TripNDroid version
-ANDROID_VERSION := 7.1.2
-ANDROID_NAME := Nougat
-TRIPNDROID_VERSION_N := v1.2
+ANDROID_VERSION := 8.0.0
+ANDROID_NAME := Oreo
+TRIPNDROID_VERSION_N := v2.0.1
 
 ifndef TRIPNDROID_BUILD_TYPE
     TRIPNDROID_BUILD_TYPE := UNOFFICIAL
