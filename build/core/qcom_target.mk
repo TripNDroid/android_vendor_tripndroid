@@ -28,14 +28,11 @@ ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
     B_FAMILY := msm8226 msm8610 msm8974
     B64_FAMILY := msm8992 msm8994
     BR_FAMILY := msm8909 msm8916
-    UM_FAMILY := msm8937 msm8953 msm8996 msm8998 sdm660
+    UM_FAMILY := msm8937 msm8953
 
     BOARD_USES_ADRENO := true
 
-    # UM platforms no longer need this set
-    ifneq ($(call is-board-platform-in-list, $(UM_FAMILY)),true)
-        TARGET_USES_QCOM_BSP := true
-    endif
+    TARGET_USES_QCOM_BSP := true
 
     # Tell HALs that we're compiling an AOSP build with an in-line kernel
     TARGET_COMPILE_WITH_MSM_KERNEL := true
@@ -50,8 +47,8 @@ ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
     # Allow building audio encoders
     TARGET_USES_QCOM_MM_AUDIO := true
 
-    # Enable color metadata for 8xx UM targets
-    ifneq ($(filter msm8996 msm8998,$(TARGET_BOARD_PLATFORM)),)
+    # Enable color metadata for modern UM targets
+    ifneq ($(filter msm8996 msm8998 sdm660,$(TARGET_BOARD_PLATFORM)),)
         TARGET_USES_COLOR_METADATA := true
     endif
 
@@ -72,7 +69,7 @@ ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
     else
     ifeq ($(call is-board-platform-in-list, $(UM_FAMILY)),true)
         MSM_VIDC_TARGET_LIST := $(UM_FAMILY)
-        QCOM_HARDWARE_VARIANT := msm8996
+        QCOM_HARDWARE_VARIANT := msm8937
     else
         MSM_VIDC_TARGET_LIST := $(TARGET_BOARD_PLATFORM)
         QCOM_HARDWARE_VARIANT := $(TARGET_BOARD_PLATFORM)
@@ -92,8 +89,8 @@ $(call set-device-specific-path,LOC_API,loc-api,vendor/qcom/opensource/location)
 $(call set-device-specific-path,DATASERVICES,dataservices,vendor/qcom/opensource/dataservices)
 
 $(call ril-set-path-variant,ril)
-$(call wlan-set-path-variant,wlan)
-$(call bt-vendor-set-path-variant,bt)
+$(call wlan-set-path-variant,wlan-caf)
+$(call bt-vendor-set-path-variant,bt-caf)
 
 else
 
